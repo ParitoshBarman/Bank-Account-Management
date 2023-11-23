@@ -50,4 +50,3 @@ console.log("********* Thank You *********")
 console.log(b3.deposit(10));
 console.log(b3.withdraw(10));
 console.log(b3.checkBalance());
-console.log(b3.isActive());
