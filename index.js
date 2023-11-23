@@ -12,8 +12,12 @@ function BankAccount(accountNumber, name, type, balance){
     return {totalbalance:this.balance, message:"Deposit successfully", depositamount:amount};
 };
   this.withdraw = function(amount){
-    this.balance -= amount;
-    return {totalbalance:this.balance, message:"Withdrawl successfully", withdrawlamount:amount};
+    if(this.balance >= amount){
+      this.balance -= amount;
+      return {totalbalance:this.balance, message:"Withdrawl successfully", withdrawlamount:amount};
+    }else{
+      return {totalbalance:this.balance, message:"You have Insufficient Balance", withdrawlamount:0};
+    }
 };
   this.checkBalance = function(){
     return this.balance;
